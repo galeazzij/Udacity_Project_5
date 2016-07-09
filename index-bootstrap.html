@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Astoria, NY</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Things to do in Astoria NY</h3>
+                  <form class="navbar-form navbar-right" role="form">
+                    <div class="form-group">
+                        <label for="street">Filter types of locations: </label>
+                        <select class="form-control" data-bind="options: locationTypes, value: selectedLocationType"></select>
+                    </div>
+                    <button data-bind="click: filterMarkers">Submit</button>
+                    <button data-bind="click: toggleVisibility">List View</button>
+                  </form>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Live Intown</h1>
+            <p class="lead">Live More. Commute Less.</p>
+            <p class="lead">
+              <a href="#" class="btn btn-lg btn-default">Learn more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/dist/js/docs.min.js"></script>
+  </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="searchForm">
+        <h1>Things to do in Astoria NY.</h1>
+        <form>
+            <label for="street">Filter types of locations: </label>
+            <select data-bind="options: locationTypes, value: selectedLocationType"></select>
+            <button data-bind="click: filterMarkers">Submit</button>
+            <button data-bind="click: toggleVisibility">List View</button>
+        </form>
+    </div>
+    <div id="map-canvas"></div>
+    <div id="listview" data-bind="visible: showList">
+        <ul data-bind="foreach: locationNames">
+            <li data-bind="text: $data"></li>
+        </ul>
+    </div>
+
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="js/lib/knockout-3.3.0.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
